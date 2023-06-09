@@ -15,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    dd(DB::statement('show tables'));
+Route::get('/', function (\App\Models\Repositories\RaffleRepository $raffleRepository) {
+    dd($raffleRepository->findByTitle('rifa de teste'));
 });
